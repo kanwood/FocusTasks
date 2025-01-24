@@ -1,0 +1,20 @@
+﻿<Page x:Class="FocusTasks.Pages.TeamsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FocusTasks.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="967"
+      Title="TeamsPage" Background="DarkGray">
+
+    <Grid>
+        <DataGrid x:Name="DGTeams" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,62,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Команда" Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Добавить" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="194" RenderTransformOrigin="0.5,0.5" Click="AddClick" />
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Удалить" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="194,0,0,0" VerticalAlignment="Top" Height="57" Width="180" RenderTransformOrigin="0.5,0.5" Click="DeleteClick" />
+    </Grid>
+</Page>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="FocusTasks.Windows.RememberPassWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FocusTasks.Windows"
+        mc:Ignorable="d"
+        Title="RememberPassWindow" Background="DarkGray" MaxHeight="600" MaxWidth="1050" MinHeight="600" MinWidth="1050">
+    <Grid>
+        <TextBox Background="GhostWhite" HorizontalAlignment="Center" Height="38" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" x:Name="rememberemail" FontSize="20" FontFamily="Comic Sans MS" Margin="0,254,0,0"/>
+        <Label Content="Введите почту при регистрации аккаунта&#xD;&#xA;" HorizontalAlignment="Center" Height="40" Margin="0,178,0,0" VerticalAlignment="Top" Width="430" FontSize="20" FontFamily="Comic Sans MS"/>
+        <Button Content="Восстановить пароль" HorizontalAlignment="Center" Height="42" Margin="0,339,0,0" VerticalAlignment="Top" Width="289" FontSize="20" FontFamily="Comic Sans MS" Click="Button_Click"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Height="41" Margin="38,510,0,0" VerticalAlignment="Top" Width="142" FontSize="20" FontFamily="Comic Sans MS" x:Name="BackButton" Click="BackButton_Click"/>
+        <Label Content="FocusTasks" HorizontalAlignment="Center" Height="38" Margin="0,26,0,0" VerticalAlignment="Top" Width="130" FontSize="20" FontFamily="Comic Sans MS"/>
+
+
+
+    </Grid>
+</Window>

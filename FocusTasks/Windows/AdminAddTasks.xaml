@@ -1,0 +1,27 @@
+﻿<Window x:Class="FocusTasks.Windows.AdminAddTasks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FocusTasks.Windows"
+        mc:Ignorable="d"
+        Title="AdminAddTasks" MinHeight="450" MinWidth="800" MaxHeight="450" MaxWidth="800" Background="DarkGray">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Margin="10,26,0,0" x:Name="TitleTB" FontSize="20" FontFamily="Comic Sans MS" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="570" Height="27"/>
+        <Label Content="Заголовок" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="137" FontFamily="Comic Sans MS"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="137" FontFamily="Comic Sans MS"/>
+        <Label Content="Срок сдачи" HorizontalAlignment="Left" Margin="14,338,0,0" VerticalAlignment="Top" Width="137" FontFamily="Comic Sans MS"/>
+        <Label Content="Статус" HorizontalAlignment="Left" Margin="14,287,0,0" VerticalAlignment="Top" Width="138" FontFamily="Comic Sans MS" Height="27"/>
+        <Label Content="Создатель" HorizontalAlignment="Left" Margin="12,112,0,0" VerticalAlignment="Top" Width="136" FontFamily="Comic Sans MS" Height="29"/>
+        <Label Content="Проект" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="138" FontFamily="Comic Sans MS"/>
+        <Label Content="Команда" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="138" FontFamily="Comic Sans MS"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,82,0,0" TextWrapping="Wrap" x:Name="DescriptionTB" Text="{Binding Description}" VerticalAlignment="Top" Width="570" Height="27" FontSize="20" FontFamily="Comic Sans MS"/>
+        <DatePicker SelectedDate="{Binding Deadline, UpdateSourceTrigger=PropertyChanged}" Margin="10,365,218,0" />
+        <ComboBox DisplayMemberPath="FullName" SelectedItem="{Binding Users}" HorizontalAlignment="Left" Margin="12,141,0,0" x:Name="UserCB" VerticalAlignment="Top" Width="570" Height="27" FontFamily="Comic Sans MS"/>
+        <ComboBox DisplayMemberPath="Name" SelectedItem="{Binding Projects}" HorizontalAlignment="Left" Margin="12,198,0,0" x:Name="ProjectCB" VerticalAlignment="Top" Width="570" Height="27" FontFamily="Comic Sans MS"/>
+        <ComboBox DisplayMemberPath="Name" SelectedItem="{Binding Teams}" HorizontalAlignment="Left" Margin="12,258,0,0" x:Name="TeamCB" VerticalAlignment="Top" Width="570" Height="27" FontFamily="Comic Sans MS"/>
+        <ComboBox DisplayMemberPath="Name" SelectedItem="{Binding Statuses}" HorizontalAlignment="Left" Margin="12,314,0,0" x:Name="StatusCB" VerticalAlignment="Top" Width="570" Height="25" FontFamily="Comic Sans MS"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Height="64" Margin="633,338,0,0" VerticalAlignment="Top" Width="130" FontFamily="Comic Sans MS" FontSize="20" Click="AddTasks_Click"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Height="64" Margin="633,26,0,0" VerticalAlignment="Top" Width="130" FontFamily="Comic Sans MS" FontSize="20" Click="BackClick"/>
+    </Grid>
+</Window>

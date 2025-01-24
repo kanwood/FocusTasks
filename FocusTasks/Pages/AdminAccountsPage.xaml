@@ -1,0 +1,31 @@
+﻿<Page x:Class="FocusTasks.Pages.AdminAccountsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FocusTasks.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="967"
+      Title="AdminAccountsPage" Background="DarkGray">
+
+    <Grid>
+        <DataGrid x:Name="DGAccountAdmin" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,66,0,10" SelectionChanged="DGAccountAdmin_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}" Width="*"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Username}" Width="*" />
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*" />
+                <DataGridTextColumn Header="Электронная почта" Binding="{Binding Email}" Width="*" />
+                <DataGridTextColumn Header="Ваша команда" Binding="{Binding Teams.Name}" Width="*" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Изменить пароль" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" Name="EditPass" Click="EditPass_Click" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Выбрать команду" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="242" RenderTransformOrigin="0.5,0.5" Click="AddTeamClick" />
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Просмотр всех пользователей" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="315" RenderTransformOrigin="0.5,0.5" Click="AllUserClick" Margin="242,0,0,0" />
+    </Grid>
+</Page>

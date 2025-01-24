@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d6822beb30c43f7ab4bcb8793270515" Name="Diagram1">
+        <EntityTypeShape EntityType="FocusTasksModel.Projects" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.Roles" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.Statuses" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.Tasks" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.Teams" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FocusTasksModel.Users" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="FocusTasksModel.FK_Tasks_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="FocusTasksModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FocusTasksModel.FK_Tasks_Statuses" ManuallyRouted="false" />
+        <AssociationConnector Association="FocusTasksModel.FK_Tasks_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="FocusTasksModel.FK_Tasks_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FocusTasksModel.FK_Users_Teams" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

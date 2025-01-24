@@ -1,0 +1,17 @@
+﻿<Window x:Class="FocusTasks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FocusTasks"
+        mc:Ignorable="d"
+        Title="MainWindow" Background="DarkGray" MaxHeight="600" MaxWidth="1050" MinHeight="600" MinWidth="1050">
+    <Grid>
+        <Image Source="/Image2.png" Stretch="Fill"/>
+        <Image Margin="264,297,506,79" Source="/Image3.png" Stretch="Fill"/>
+        <Label Content="FocusTasks" FontSize="80" FontWeight="ExtraBold" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
+        <Button Content="Авторизация" HorizontalAlignment="Center" Margin="0,254,0,0" VerticalAlignment="Top" x:Name="LoginButton" Click="LoginButton_Click" FontFamily="Comic Sans MS" Height="38" Width="244" FontSize="20"/>
+        <Button Content="Регистрация" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" x:Name="RegButton" Click="RegButton_Click" Height="38" Width="244" FontFamily="Comic Sans MS" FontSize="20"/>
+
+    </Grid>
+</Window>

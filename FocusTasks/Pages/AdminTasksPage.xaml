@@ -1,0 +1,36 @@
+﻿<Page x:Class="FocusTasks.Pages.AdminTasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FocusTasks.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="967"
+      Title="AdminTasksPage" Background="DarkGray">
+
+    <Grid>
+        <DataGrid x:Name="DGTasksAdmin" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,62,0,10" SelectionChanged="DGTasksAdmin_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" Width="*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*" />
+                <DataGridTextColumn Header="Срок сдачи" Binding="{Binding Deadline}" Width="*" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Statuses.Name}" Width="*" />
+                <DataGridTextColumn Header="Создатель" Binding="{Binding Users.FullName}" Width="*" />
+                <DataGridTextColumn Header="Проект" Binding="{Binding Path=Projects.Name}" Width="*" />
+                <DataGridTextColumn Header="Команда" Binding="{Binding Path=Teams.Name}" Width="*"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" FontFamily="Lucida Console" FontSize="18" Background="WhiteSmoke" Name="EditItem" Click="EditClick" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Добавить" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="194" RenderTransformOrigin="0.5,0.5" Click="AddClick" />
+        <Button Background="DarkGray" BorderBrush="DarkGray" Content="Удалить" FontSize="20" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="199,0,0,0" VerticalAlignment="Top" Height="57" Width="180" RenderTransformOrigin="0.5,0.5" Click="DeleteClick" />
+        <TextBox HorizontalAlignment="Left" Margin="393,12,0,0" TextWrapping="Wrap" x:Name="searchTB" FontFamily="Comic Sans MS" FontSize="20" Text="" VerticalAlignment="Top" Width="278" Height="32"/>
+        <Button Content="Поиск" Click="search_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="702,12,0,0" VerticalAlignment="Top" Width="109" />
+        <Button Content="Сбросить" Click="clear_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="828,12,0,0" VerticalAlignment="Top" Width="118" />
+    </Grid>
+</Page>
