@@ -17,24 +17,25 @@ namespace FocusTasks.DB
     
     public partial class FocusTasksEntities2 : DbContext
     {
-        public FocusTasksEntities2()
-            : base("name=FocusTasksEntities2")
-        {
-        }
+            public FocusTasksEntities2()
+                : base("name=FocusTasksEntities2")
+            {
+            }
 
-        public string Username;
+            public string Username;
 
-        private static FocusTasksEntities2 _context;
+            private static FocusTasksEntities2 _context;
 
-        public static FocusTasksEntities2 GetContext()
-        {
-            if (_context == null)
-                _context = new FocusTasksEntities2();
+            public static FocusTasksEntities2 GetContext()
+            {
+                if (_context == null)
+                    _context = new FocusTasksEntities2();
 
-            return _context;
-        }
+                return _context;
+            }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }

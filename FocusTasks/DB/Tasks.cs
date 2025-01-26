@@ -9,6 +9,7 @@
 
 namespace FocusTasks.DB
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -22,10 +23,14 @@ namespace FocusTasks.DB
         public Nullable<int> idUser { get; set; }
         public Nullable<int> idProject { get; set; }
         public Nullable<int> idTeam { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Projects Projects { get; set; }
+        [JsonIgnore]
         public virtual Statuses Statuses { get; set; }
+        [JsonIgnore]
         public virtual Teams Teams { get; set; }
+        [JsonIgnore]
         public virtual Users Users { get; set; }
     }
 }

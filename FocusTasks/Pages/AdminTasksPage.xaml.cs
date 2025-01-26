@@ -2,6 +2,7 @@
 using FocusTasks.Windows;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
+using System.Xml;
+using Newtonsoft.Json;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace FocusTasks.Pages
 {
 
     public partial class AdminTasksPage : Page
+
     {
         List<Tasks> tasks;
         List<Tasks> filteredtasks = new List<Tasks>();
@@ -98,6 +105,60 @@ namespace FocusTasks.Pages
         {
             DGTasksAdmin.ItemsSource = null;
             DGTasksAdmin.ItemsSource = tasks;
+        }
+
+        private void Filetxt_Click(object sender, RoutedEventArgs e)
+        {
+            ExportToTxt();
+        }
+
+        private void Filejson_Click(object sender, RoutedEventArgs e)
+        {
+            ExportToJson();
+        }
+
+        private void ExportToTxt()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
+                Title = "Сохранить данные в текстовый файл"
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                {
+
+                    // Записываем данные
+                    foreach (var task in tasks)
+                    {
+                        writer.WriteLine($"Заголовок: {task.Title}\nОписание: {task.Description}\nСрок сдачи: {task.Deadline}\nСтатус: {task.Statuses.Name}\nСоздатель: {task.Users.FullName}\nПроект: {task.Projects.Name}\nКоманда: {task.Teams.Name}\n");
+                    }
+                }
+
+                MessageBox.Show("Данные успешно экспортированы!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void ExportToJson()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                Title = "Сохранить данные в JSON файл"
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                // Сериализация данных в JSON
+                string json = JsonConvert.SerializeObject(tasks, Formatting.Indented);
+
+                // Запись JSON в файл
+                File.WriteAllText(saveFileDialog.FileName, json);
+
+                MessageBox.Show("Данные успешно экспортированы в JSON!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

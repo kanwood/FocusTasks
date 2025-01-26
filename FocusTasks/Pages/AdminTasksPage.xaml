@@ -9,7 +9,7 @@
       Title="AdminTasksPage" Background="DarkGray">
 
     <Grid>
-        <DataGrid x:Name="DGTasksAdmin" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,62,0,10" SelectionChanged="DGTasksAdmin_SelectionChanged">
+        <DataGrid x:Name="DGTasksAdmin" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,119,0,10" SelectionChanged="DGTasksAdmin_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" Width="*"/>
                 <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*" />
@@ -32,5 +32,8 @@
         <TextBox HorizontalAlignment="Left" Margin="393,12,0,0" TextWrapping="Wrap" x:Name="searchTB" FontFamily="Comic Sans MS" FontSize="20" Text="" VerticalAlignment="Top" Width="278" Height="32"/>
         <Button Content="Поиск" Click="search_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="702,12,0,0" VerticalAlignment="Top" Width="109" />
         <Button Content="Сбросить" Click="clear_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="828,12,0,0" VerticalAlignment="Top" Width="118" />
+        <Button Content=".txt" Click="Filetxt_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="569,64,0,0" VerticalAlignment="Top" Width="102" />
+        <Button Content=".json" Click="Filejson_Click" HorizontalAlignment="Left" Height="32" FontFamily="Comic Sans MS" FontSize="20" Margin="687,64,0,0" VerticalAlignment="Top" Width="109" />
+        <Label Content="Выберите формат экспорта:" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="20" Margin="284,61,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
